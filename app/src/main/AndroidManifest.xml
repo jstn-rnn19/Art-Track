@@ -37,6 +37,11 @@
         <activity
             android:name=".RegistrationView"
             android:exported="false"
+            android:parentActivityName=".WelcomeView"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RoleSelectionView"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
 
