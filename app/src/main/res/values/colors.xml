@@ -22,4 +22,5 @@
     <color name="warm_tint">#F6F3EF</color>
     <color name="purple_brand">#7351B5</color>
     <color name="deeper_container_color">#DCCFF0</color>
+    <color name="screen_color_background">#FFFDFA</color>
 </resources>
