@@ -1,10 +1,12 @@
 package com.example.arttrack;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +57,12 @@ public class WelcomeView extends AppCompatActivity {
 
         handler.postDelayed(() ->
                 animateImage(imageView3), 750);
+
+        Button CreateAcc = findViewById(R.id.welcomeViewCreateBtn);
+        CreateAcc.setOnClickListener(v -> {
+            Intent intent = new Intent(WelcomeView.this, RegistrationView.class);
+            startActivity(intent);
+        });
     }
 
     @Override
