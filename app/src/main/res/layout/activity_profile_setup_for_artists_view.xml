@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_color_background"
+    tools:context=".ProfileSetupForArtistsView">
+
+    <!-- Top Header Bar -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="?attr/homeAsUpIndicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/fraunces_medium"
+        android:text="Set up your profile"
+        android:textColor="#1D1B20"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveAndContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Avatar & Swatches Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Main Avatar Circle -->
+                <FrameLayout
+                    android:id="@+id/avatarCircle"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/circle_shape">
+
+                    <TextView
+                        android:id="@+id/tvAvatarLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/fraunces_medium"
+                        android:text="A"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <!-- Color Swatches Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Swatch 1 -->
+                    <FrameLayout
+                        android:id="@+id/swatch1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="visible" />
+
+                        <View
+                            android:id="@+id/color1"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#7A52C7" />
+                    </FrameLayout>
+
+                    <!-- Swatch 2 -->
+                    <FrameLayout
+                        android:id="@+id/swatch2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/color2"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#56369A" />
+                    </FrameLayout>
+
+                    <!-- Swatch 3 -->
+                    <FrameLayout
+                        android:id="@+id/swatch3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/color3"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#6242B2" />
+                    </FrameLayout>
+
+                    <!-- Swatch 4 -->
+                    <FrameLayout
+                        android:id="@+id/swatch4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/color4"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#936FE0" />
+                    </FrameLayout>
+
+                    <!-- Swatch 5 -->
+                    <FrameLayout
+                        android:id="@+id/swatch5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring5"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/color5"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#A24B00" />
+                    </FrameLayout>
+
+                    <!-- Swatch 6 -->
+                    <FrameLayout
+                        android:id="@+id/swatch6"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:id="@+id/ring6"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/swatch_ring_drawable"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/color6"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/circle_shape"
+                            android:backgroundTint="#1B6C3D" />
+                    </FrameLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Display Name Label & EditText -->
+            <TextView
+                android:id="@+id/tvDisplayNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Display name"
+                android:textColor="#3E3A42"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_rounded_bg"
+                android:ems="10"
+                android:fontFamily="@font/dm_sans"
+                android:hint="Mika Reyes"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#1D1B20"
+                android:textColorHint="#A4A1A4"
+                android:textSize="16sp" />
+
+            <!-- Short Bio Label & EditText -->
+            <TextView
+                android:id="@+id/tvBioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Short bio"
+                android:textColor="#3E3A42"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etShortBio"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_rounded_bg"
+                android:ems="10"
+                android:fontFamily="@font/dm_sans"
+                android:gravity="top|start"
+                android:hint="What do you love to draw?"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="#1D1B20"
+                android:textColorHint="#A4A1A4"
+                android:textSize="15sp" />
+
+            <!-- Styles You Draw Label & ChipGroup -->
+            <TextView
+                android:id="@+id/tvStylesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="What do you draw?"
+                android:textColor="#3E3A42"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cgArtistStyles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPortraits"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Portraits"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCharacters"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Characters"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipConceptArt"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Concept art"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLogos"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Logos"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipChibi"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Chibi"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBackgrounds"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Backgrounds"
+                    android:textColor="@color/chip_text_color_selector"
+                    android:textSize="14sp"
+                    app:checkedIconEnabled="false"
+                    app:chipBackgroundColor="@color/chip_background_selector"
+                    app:chipCornerRadius="20dp"
+                    app:chipMinHeight="40dp"
+                    app:chipStrokeColor="@color/chip_stroke_color_selector"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Starting Price Label & EditText -->
+            <TextView
+                android:id="@+id/tvPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Starting price (₱)"
+                android:textColor="#3E3A42"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etStartingPrice"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_rounded_bg"
+                android:ems="10"
+                android:fontFamily="@font/dm_sans"
+                android:hint="1500"
+                android:inputType="numberDecimal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#1D1B20"
+                android:textColorHint="#A4A1A4"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Save and Continue Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveAndContinue"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/purple_brand"
+        android:fontFamily="@font/dm_sans_bold"
+        android:text="Save and continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
