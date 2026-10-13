@@ -34,6 +34,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".LoginView"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".RegistrationView"
             android:exported="false"
             android:parentActivityName=".WelcomeView"
@@ -47,7 +51,19 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".ProfileSetupForArtistsView"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".OnBoardingViewForClient"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ClientHomeDashboardView"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ArtistHomeDashboardView"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
