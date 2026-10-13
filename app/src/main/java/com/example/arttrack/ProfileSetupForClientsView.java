@@ -96,9 +96,13 @@ public class ProfileSetupForClientsView extends AppCompatActivity {
         if (btnSaveAndContinue != null) {
             btnSaveAndContinue.setOnClickListener(v -> {
                 String finalDisplayName = etDisplayName.getText().toString().trim();
+                if (finalDisplayName.isEmpty()) {
+                    Toast.makeText(this, "Please enter your display name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String aboutText = etAboutYou != null ? etAboutYou.getText().toString().trim() : "";
 
-                Toast.makeText(this, "Profile saved for " + (finalDisplayName.isEmpty() ? "Client" : finalDisplayName), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Profile saved for " + finalDisplayName, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(ProfileSetupForClientsView.this, OnBoardingViewForClient.class);
                 intent.putExtra("DISPLAY_NAME", finalDisplayName);
