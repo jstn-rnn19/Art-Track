@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,13 +59,17 @@ public class RoleSelectionView extends AppCompatActivity {
 
         if (btnContinue != null) {
             btnContinue.setOnClickListener(v -> {
+                if (selectedRole == Role.NONE) {
+                    Toast.makeText(RoleSelectionView.this, "Please select your role (Client or Artist)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (selectedRole == Role.CLIENT) {
                     Intent intent = new Intent(RoleSelectionView.this, ProfileSetupForClientsView.class);
                     intent.putExtra("SELECTED_ROLE", selectedRole.name());
                     intent.putExtra("FULL_NAME", fullName);
                     startActivity(intent);
                 } else if (selectedRole == Role.ARTIST) {
-                    Intent intent = new Intent(RoleSelectionView.this, MainActivity.class);
+                    Intent intent = new Intent(RoleSelectionView.this, ProfileSetupForArtistsView.class);
                     intent.putExtra("SELECTED_ROLE", selectedRole.name());
                     intent.putExtra("FULL_NAME", fullName);
                     startActivity(intent);
