@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F4EE"
+    android:padding="24dp"
+    android:scrollbarSize="45dp">
+
+    <!-- SKIP BUTTON -->
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/dm_sans"
+        android:padding="8dp"
+        android:text="Skip"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- PAGE FLIPPER -->
+    <ViewFlipper
+        android:id="@+id/pageFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/dotsLayout"
+        app:layout_constraintTop_toBottomOf="@id/btnSkip">
+
+        <!-- PAGE 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="553dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="Request art illustration"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/imagine" />
+
+            <TextView
+                android:id="@+id/tvTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="serif"
+                android:lineSpacingExtra="4dp"
+                android:text="Request the art you imagine"
+                android:textColor="#29262D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDesc1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:text="Describe your idea, add references and send it to an artist."
+                android:textColor="#77737A"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- PAGE 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="553dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="Status tracker illustration"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="8dp"
+                app:srcCompat="@drawable/create" />
+
+            <TextView
+                android:id="@+id/tvTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="serif"
+                android:lineSpacingExtra="4dp"
+                android:text="See exactly where it stands"
+                android:textColor="#29262D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDesc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:text="A 10-step tracker shows what is done, what is next and when you need to act."
+                android:textColor="#77737A"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- PAGE 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="553dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="Download artwork illustration"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="8dp"
+                app:srcCompat="@drawable/downloadimage" />
+
+            <TextView
+                android:id="@+id/tvTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="serif"
+                android:lineSpacingExtra="4dp"
+                android:text="Download when it's ready"
+                android:textColor="#29262D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDesc3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:text="Approve the final artwork, pay the balance and download your files in the app."
+                android:textColor="#77737A"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </ViewFlipper>
+
+    <!-- PAGE INDICATORS -->
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="26dp"
+            android:layout_height="8dp"
+            android:background="@drawable/onboarding_active" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/onboarding_inactive" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/onboarding_inactive" />
+    </LinearLayout>
+
+    <!-- NEXT / GET STARTED BUTTON -->
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_primary"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
