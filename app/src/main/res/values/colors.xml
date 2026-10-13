@@ -23,4 +23,5 @@
     <color name="purple_brand">#7351B5</color>
     <color name="deeper_container_color">#DCCFF0</color>
     <color name="screen_color_background">#FFFDFA</color>
+    <color name="inactive">#b5a4d8</color>
 </resources>
