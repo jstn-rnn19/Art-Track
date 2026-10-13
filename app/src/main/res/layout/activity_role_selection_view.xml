@@ -170,7 +170,7 @@
     <Button
         android:id="@+id/btnContinue"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="62dp"
         android:backgroundTint="@color/purple_brand"
         android:fontFamily="@font/dm_sans"
         android:text="Continue"
@@ -187,6 +187,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fraunces_medium"
         android:text="How will you use ARTTRACK?"
+        android:textColor="@color/surface"
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cardClient"
