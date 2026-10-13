@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Art Track</string>
+    <string name="greeting_format">Hi, %s</string>
 </resources>
