@@ -196,7 +196,9 @@ public class OnBoardingViewForClient extends AppCompatActivity {
     }
 
     private void navigateToHome() {
-        Intent intent = new Intent(OnBoardingViewForClient.this, MainActivity.class);
+        String displayName = getIntent() != null ? getIntent().getStringExtra("DISPLAY_NAME") : "";
+        Intent intent = new Intent(OnBoardingViewForClient.this, ClientHomeDashboardView.class);
+        intent.putExtra("DISPLAY_NAME", displayName);
         startActivity(intent);
         finish();
     }
