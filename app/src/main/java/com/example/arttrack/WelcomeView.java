@@ -63,6 +63,14 @@ public class WelcomeView extends AppCompatActivity {
             Intent intent = new Intent(WelcomeView.this, RegistrationView.class);
             startActivity(intent);
         });
+
+        Button btnSignIn = findViewById(R.id.welcomeViewSignIn);
+        if (btnSignIn != null) {
+            btnSignIn.setOnClickListener(v -> {
+                Intent intent = new Intent(WelcomeView.this, LoginView.class);
+                startActivity(intent);
+            });
+        }
     }
 
     @Override
