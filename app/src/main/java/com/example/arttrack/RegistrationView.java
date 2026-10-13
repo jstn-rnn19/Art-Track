@@ -28,10 +28,16 @@ public class RegistrationView extends AppCompatActivity {
         if (btnBack != null) {
             btnBack.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         }
-        Button BtnContinue = findViewById(R.id.ContinueBtnRegistrationView);
-        BtnContinue.setOnClickListener(v -> {
-            Intent intent = new Intent(RegistrationView.this, RoleSelectionView.class);
-            startActivity(intent);
-        });
+
+        android.widget.EditText etFullName = findViewById(R.id.EditTextFullNameRegisterView);
+        Button btnContinue = findViewById(R.id.ContinueBtnRegistrationView);
+        if (btnContinue != null) {
+            btnContinue.setOnClickListener(v -> {
+                String fullName = etFullName != null ? etFullName.getText().toString().trim() : "";
+                Intent intent = new Intent(RegistrationView.this, RoleSelectionView.class);
+                intent.putExtra("FULL_NAME", fullName);
+                startActivity(intent);
+            });
+        }
     }
 }

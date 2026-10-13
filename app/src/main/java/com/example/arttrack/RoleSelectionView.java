@@ -2,7 +2,6 @@ package com.example.arttrack;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -54,11 +53,20 @@ public class RoleSelectionView extends AppCompatActivity {
             cardArtist.setOnClickListener(v -> selectRole(Role.ARTIST));
         }
 
+        String fullNameExtra = getIntent() != null ? getIntent().getStringExtra("FULL_NAME") : "";
+        final String fullName = fullNameExtra != null ? fullNameExtra : "";
+
         if (btnContinue != null) {
             btnContinue.setOnClickListener(v -> {
-                if (selectedRole != Role.NONE) {
+                if (selectedRole == Role.CLIENT) {
+                    Intent intent = new Intent(RoleSelectionView.this, ProfileSetupForClientsView.class);
+                    intent.putExtra("SELECTED_ROLE", selectedRole.name());
+                    intent.putExtra("FULL_NAME", fullName);
+                    startActivity(intent);
+                } else if (selectedRole == Role.ARTIST) {
                     Intent intent = new Intent(RoleSelectionView.this, MainActivity.class);
                     intent.putExtra("SELECTED_ROLE", selectedRole.name());
+                    intent.putExtra("FULL_NAME", fullName);
                     startActivity(intent);
                 }
             });
