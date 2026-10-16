@@ -47,17 +47,59 @@ public class ArtistHomeDashboardView extends AppCompatActivity {
 
         View btnQuickRequests = findViewById(R.id.btnQuickRequests);
         if (btnQuickRequests != null) {
-            btnQuickRequests.setOnClickListener(v -> Toast.makeText(this, "Review requests tapped", Toast.LENGTH_SHORT).show());
+            btnQuickRequests.setOnClickListener(v -> openRequests());
+        }
+
+        View cardStatPending = findViewById(R.id.cardStatPending);
+        if (cardStatPending != null) {
+            cardStatPending.setOnClickListener(v -> openRequests());
+        }
+
+        View navTabRequests = findViewById(R.id.navTabRequests);
+        if (navTabRequests != null) {
+            navTabRequests.setOnClickListener(v -> openRequests());
+        }
+
+        View navTabCommissions = findViewById(R.id.navTabCommissions);
+        if (navTabCommissions != null) {
+            navTabCommissions.setOnClickListener(v -> {
+                Intent commIntent = new Intent(ArtistHomeDashboardView.this, ArtistCommissionsView.class);
+                startActivity(commIntent);
+            });
+        }
+
+        View navTabPayments = findViewById(R.id.navTabPayments);
+        if (navTabPayments != null) {
+            navTabPayments.setOnClickListener(v -> {
+                Intent payIntent = new Intent(ArtistHomeDashboardView.this, ArtistPaymentsView.class);
+                startActivity(payIntent);
+            });
+        }
+
+        View navTabProfile = findViewById(R.id.navTabProfile);
+        if (navTabProfile != null) {
+            navTabProfile.setOnClickListener(v -> {
+                Intent profileIntent = new Intent(ArtistHomeDashboardView.this, ArtistProfileView.class);
+                startActivity(profileIntent);
+            });
         }
 
         View btnQuickVerify = findViewById(R.id.btnQuickVerify);
         if (btnQuickVerify != null) {
-            btnQuickVerify.setOnClickListener(v -> Toast.makeText(this, "Verify payments tapped", Toast.LENGTH_SHORT).show());
+            btnQuickVerify.setOnClickListener(v -> {
+                Intent payIntent = new Intent(ArtistHomeDashboardView.this, ArtistPaymentsView.class);
+                startActivity(payIntent);
+            });
         }
 
         View btnQuickDeadlines = findViewById(R.id.btnQuickDeadlines);
         if (btnQuickDeadlines != null) {
             btnQuickDeadlines.setOnClickListener(v -> Toast.makeText(this, "Deadlines tapped", Toast.LENGTH_SHORT).show());
         }
+    }
+
+    private void openRequests() {
+        Intent reqIntent = new Intent(ArtistHomeDashboardView.this, ArtistRequestsView.class);
+        startActivity(reqIntent);
     }
 }
