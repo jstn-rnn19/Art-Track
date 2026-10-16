@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_color_background"
+    tools:context=".ClientProfileView">
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/fraunces_medium"
+        android:text="Profile"
+        android:textColor="#1D1B20"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavClient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Profile Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/role_card_unselected"
+                android:padding="20dp">
+
+                <FrameLayout
+                    android:id="@+id/avatarCircle"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/circle_shape"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvAvatarLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/fraunces_medium"
+                        android:text="J"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/fraunces_medium"
+                    android:text="Jonas Villanueva"
+                    android:textColor="#1D1B20"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/avatarCircle"
+                    app:layout_constraintTop_toTopOf="@+id/avatarCircle" />
+
+                <TextView
+                    android:id="@+id/tvProfileHandle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/dm_sans"
+                    android:text="Art collector, @jonasv"
+                    android:textColor="#5A5760"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/avatarCircle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/badge_bg"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    android:text="Verified Client"
+                    android:textColor="#1E6B3A"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toEndOf="@+id/avatarCircle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileHandle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Action Rows Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/role_card_unselected"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:gravity="start|center_vertical"
+                    android:text="Commission history"
+                    android:textAllCaps="false"
+                    android:textColor="#1D1B20"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6DFD5" />
+
+                <Button
+                    android:id="@+id/btnSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:gravity="start|center_vertical"
+                    android:text="Account settings"
+                    android:textAllCaps="false"
+                    android:textColor="#1D1B20"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6DFD5" />
+
+                <Button
+                    android:id="@+id/btnHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:gravity="start|center_vertical"
+                    android:text="Help and information"
+                    android:textAllCaps="false"
+                    android:textColor="#1D1B20"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- Log Out Button -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/role_card_unselected"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Log out"
+                android:textAllCaps="false"
+                android:textColor="#B3261E"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar for Client -->
+    <LinearLayout
+        android:id="@+id/bottomNavClient"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#FFFDFA"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Tab 1: Home -->
+        <LinearLayout
+            android:id="@+id/navTabHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Home"
+                android:src="@drawable/home_3917033" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Home"
+                android:textColor="#5A5760"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 2: Commissions -->
+        <LinearLayout
+            android:id="@+id/navTabCommissions"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Commissions"
+                android:src="@drawable/palette_3917489" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Commissions"
+                android:textColor="#5A5760"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 3: Payments -->
+        <LinearLayout
+            android:id="@+id/navTabPayments"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Payments"
+                android:src="@drawable/payment_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Payments"
+                android:textColor="#5A5760"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 4: Alerts -->
+        <LinearLayout
+            android:id="@+id/navTabAlerts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Alerts"
+                android:src="@drawable/bell_3917270" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Alerts"
+                android:textColor="#5A5760"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 5: Profile (Active) -->
+        <LinearLayout
+            android:id="@+id/navTabProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/user_3917688" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Profile"
+                android:textColor="#7351B5"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
