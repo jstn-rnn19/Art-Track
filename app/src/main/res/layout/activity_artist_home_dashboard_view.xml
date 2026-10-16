@@ -113,10 +113,13 @@
 
                 <!-- Stat 2: Pending -->
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardStatPending"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:background="@drawable/role_card_unselected"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:padding="16dp">
 
                     <TextView
@@ -479,9 +482,12 @@
 
         <!-- Tab 1: Home -->
         <LinearLayout
+            android:id="@+id/navTabHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -503,9 +509,12 @@
 
         <!-- Tab 2: Requests -->
         <LinearLayout
+            android:id="@+id/navTabRequests"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -527,9 +536,12 @@
 
         <!-- Tab 3: Commissions -->
         <LinearLayout
+            android:id="@+id/navTabCommissions"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -551,9 +563,12 @@
 
         <!-- Tab 4: Payments -->
         <LinearLayout
+            android:id="@+id/navTabPayments"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -575,9 +590,12 @@
 
         <!-- Tab 5: Profile -->
         <LinearLayout
+            android:id="@+id/navTabProfile"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
