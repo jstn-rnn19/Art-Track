@@ -49,6 +49,38 @@ public class ClientHomeDashboardView extends AppCompatActivity {
             bannerNewCommission.setOnClickListener(v -> Toast.makeText(this, "New commission request tapped", Toast.LENGTH_SHORT).show());
         }
 
+        View navTabCommissions = findViewById(R.id.navTabCommissions);
+        if (navTabCommissions != null) {
+            navTabCommissions.setOnClickListener(v -> {
+                Intent commIntent = new Intent(ClientHomeDashboardView.this, ClientCommissionsView.class);
+                startActivity(commIntent);
+            });
+        }
+
+        View navTabPayments = findViewById(R.id.navTabPayments);
+        if (navTabPayments != null) {
+            navTabPayments.setOnClickListener(v -> {
+                Intent payIntent = new Intent(ClientHomeDashboardView.this, ClientPaymentsView.class);
+                startActivity(payIntent);
+            });
+        }
+
+        View navTabAlerts = findViewById(R.id.navTabAlerts);
+        if (navTabAlerts != null) {
+            navTabAlerts.setOnClickListener(v -> {
+                Intent alertIntent = new Intent(ClientHomeDashboardView.this, ClientAlertsView.class);
+                startActivity(alertIntent);
+            });
+        }
+
+        View navTabProfile = findViewById(R.id.navTabProfile);
+        if (navTabProfile != null) {
+            navTabProfile.setOnClickListener(v -> {
+                Intent profileIntent = new Intent(ClientHomeDashboardView.this, ClientProfileView.class);
+                startActivity(profileIntent);
+            });
+        }
+
         // Fetch commissions from repository (ready for Room / Firebase database integration)
         CommissionRepository repository = new CommissionRepository();
         List<CommissionItem> needsActionList = repository.getNeedsActionCommissions();
